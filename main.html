@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ST!CH - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        input {
+            display: block;
+            width: 90%;
+            margin: 10px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Home Page -->
+    <div id="homePage" class="container">
+        <h1>Welcome to ST!CH</h1>
+        <button class="btn" onclick="showLogin()">Shop Now</button>
+    </div>
+
+    <!-- Login Page -->
+    <div id="loginPage" class="container hidden">
+        <h2>Login</h2>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button class="btn" onclick="handleLogin()">Login</button>
+        <p id="message"></p>
+        <button class="btn" onclick="showHome()">Back</button>
+    </div>
+
+    <!-- <script>
+        function showLogin() {
+            document.getElementById("homePage").classList.add("hidden");
+            document.getElementById("loginPage").classList.remove("hidden");
+        }
+
+        function showHome() {
+            document.getElementById("loginPage").classList.add("hidden");
+            document.getElementById("homePage").classList.remove("hidden");
+        }
+
+        async function register() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    try {
+        const response = await fetch("http://127.0.0.1:5000/api/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+        alert(data.message);
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+
+async function login() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    try {
+        const response = await fetch("http://127.0.0.1:5000/api/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+        alert(data.message);
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+
+async function addProduct() {
+    const name = document.getElementById("product_name").value;
+    const price = document.getElementById("product_price").value;
+    
+    try {
+        const response = await fetch("http://127.0.0.1:5000/api/add_product", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, price, seller: "Test Seller" })
+        });
+
+        const data = await response.json();
+        alert(data.message);
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+
+async function fetchProducts() {
+    try {
+        const response = await fetch("http://127.0.0.1:5000/api/products");
+        const products = await response.json();
+
+        const productList = document.getElementById("product-list");
+        productList.innerHTML = "";
+        
+        products.forEach(product => {
+            const li = document.createElement("li");
+            li.textContent = `${product.name} - $${product.price} (Seller: ${product.seller})`;
+            productList.appendChild(li);
+        });
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+
+    </script> -->
+
+<script src="sc"></script>    
+</body>
+</html>
